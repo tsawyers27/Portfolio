@@ -1,8 +1,27 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 
 int main()
 {
-    std::cout << "Grid planner is ready\n";
-    std::cout << "C++ standard valued: " << __cplusplus << '\n';
+    std::string file_name;
+    std::cout << "Enter grid file name: ";
+    std::cin >> file_name;
+
+    std::cout << "\n";
+    std::cout << "Selected Grid: \n";
+    std::cout << "\n";
+
+    std::fstream file(file_name);
+
+    std::string line;
+    while (std::getline(file, line))
+    {
+        std::cout << line << std::endl;
+    }
+
+    std::cout << "\n";
+
+    file.close();
     return 0;
 }
