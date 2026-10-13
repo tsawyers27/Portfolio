@@ -10,5 +10,11 @@
   "command": "/usr/bin/g++ -g -std=gnu++17 -o CMakeFiles/grid_planner.dir/grid.cpp.o -c /home/query/Portfolio/Grid_Path_Planner/grid.cpp",
   "file": "/home/query/Portfolio/Grid_Path_Planner/grid.cpp",
   "output": "CMakeFiles/grid_planner.dir/grid.cpp.o"
+},
+{
+  "directory": "/home/query/Portfolio/Grid_Path_Planner/build",
+  "command": "/usr/bin/g++ -g -std=gnu++17 -o CMakeFiles/grid_planner.dir/planner.cpp.o -c /home/query/Portfolio/Grid_Path_Planner/planner.cpp",
+  "file": "/home/query/Portfolio/Grid_Path_Planner/planner.cpp",
+  "output": "CMakeFiles/grid_planner.dir/planner.cpp.o"
 }
 ]

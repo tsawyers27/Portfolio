@@ -7,4 +7,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(grid_planner
     main.cpp
-    grid.cpp)
+    grid.cpp
+    planner.cpp)
