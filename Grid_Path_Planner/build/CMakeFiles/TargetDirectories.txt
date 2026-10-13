@@ -1,0 +1,3 @@
+/home/query/Portfolio/Grid_Path_Planner/build/CMakeFiles/grid_planner.dir
+/home/query/Portfolio/Grid_Path_Planner/build/CMakeFiles/edit_cache.dir
+/home/query/Portfolio/Grid_Path_Planner/build/CMakeFiles/rebuild_cache.dir

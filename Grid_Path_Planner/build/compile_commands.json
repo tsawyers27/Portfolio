@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/query/Portfolio/Grid_Path_Planner/build",
+  "command": "/usr/bin/g++ -g -std=gnu++17 -o CMakeFiles/grid_planner.dir/main.cpp.o -c /home/query/Portfolio/Grid_Path_Planner/main.cpp",
+  "file": "/home/query/Portfolio/Grid_Path_Planner/main.cpp",
+  "output": "CMakeFiles/grid_planner.dir/main.cpp.o"
+},
+{
+  "directory": "/home/query/Portfolio/Grid_Path_Planner/build",
+  "command": "/usr/bin/g++ -g -std=gnu++17 -o CMakeFiles/grid_planner.dir/grid.cpp.o -c /home/query/Portfolio/Grid_Path_Planner/grid.cpp",
+  "file": "/home/query/Portfolio/Grid_Path_Planner/grid.cpp",
+  "output": "CMakeFiles/grid_planner.dir/grid.cpp.o"
+}
+]
