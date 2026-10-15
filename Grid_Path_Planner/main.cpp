@@ -7,13 +7,21 @@ int main()
 {
     vector<vector<char>> grid = read_grid();
     display_grid(grid);
+
     pair<int, int> start = get_start(grid, 'S');
     pair<int, int> goal = get_goal(grid, 'G');
+
+    cout << "Starting Point: ";
     cout << "(" << start.first << ", " << start.second << ")\n";
+    cout << "Goal: ";
     cout << "(" << goal.first << ", " << goal.second << ")\n";
+
+    cout << "BFS Results: \n";
     vector<vector<pair<int, int>>> parents = bfs(grid);
     vector<pair<int, int>> path = build_path(parents, start, goal);
     display_path_length(path);
     print_path(path);
+
+    cout << "A* Search Results: \n";
     return 0;
 }

@@ -36,7 +36,6 @@ pair<int, int> get_goal(const vector<vector<char>>& grid, char goal)
     return {-1, -1};
 }
 
-//TODO: write code for path construction and printing
 vector<pair<int, int>> build_path(const vector<vector<pair<int, int>>>& parents,
                                       pair<int, int> start, pair<int, int> goal)
 {
@@ -45,11 +44,7 @@ vector<pair<int, int>> build_path(const vector<vector<pair<int, int>>>& parents,
 
     //Begin at goal coordinates
     pair<int, int> curr = goal;
-    //Add goal to path vector
-    //Look up current cell's parent in parent grid
-    //Move to that parent and add its coordinates to the path
-    //Ensure starting coordinates are added to path vector
-    //Reverse the path vector so it runs from start to goal
+    
     while (curr != start)
     {
         path.push_back(curr);
