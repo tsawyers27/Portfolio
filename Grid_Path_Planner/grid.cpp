@@ -1,19 +1,20 @@
 #include "grid.h"
 #include <iostream>
 #include <fstream>
+using namespace std;
 
-std::vector<std::vector<char>> read_grid()
+vector<vector<char>> read_grid()
 {
-    std::vector<std::vector<char>> grid;
+    vector<vector<char>> grid;
 
-    std::string file_name;
-    std::cout << "Enter grid file name: ";
-    std::cin >> file_name;
+    string file_name;
+    cout << "Enter grid file name: ";
+    cin >> file_name;
 
-    std::fstream file(file_name);
+    fstream file(file_name);
 
     char ch;
-    std::vector<char> row;
+    vector<char> row;
     while (file.get(ch))
     {
         if (ch != '\n')
@@ -31,14 +32,14 @@ std::vector<std::vector<char>> read_grid()
     return grid;
 }
 
-void display_grid(const std::vector<std::vector<char>>& grid)
+void display_grid(const vector<vector<char>>& grid)
 {
         for (const auto& row : grid)
     {
         for (char elem : row)
         {
-            std::cout << elem << " ";
+            cout << elem << " ";
         }
-        std::cout << std::endl;
+        cout << endl;
     }
 }
