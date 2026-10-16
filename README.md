@@ -22,6 +22,14 @@ A command-line utility that scans a directory and its subdirectories to identify
 
 **Demonstrates:** filesystem traversal, hashing, error handling, data grouping, and reporting.
 
+### Grid-Based Robot Path Planner — C++
+
+A command-line grid pathfinding application that implements **Breadth-First Search (BFS)** and **A\*** to navigate two-dimensional maze maps. Both algorithms find shortest routes using four-directional, unit-cost movement while avoiding blocked cells. The program reads maps from text files, reconstructs routes using parent coordinates, displays solved grids, and reports path length and nodes expanded for comparison. Both algorithms produced optimal paths across three test mazes.
+
+**Design considerations:** BFS uses a FIFO queue and tracks visited cells, while A* uses a min-priority queue, a Manhattan-distance heuristic, best-known path-cost tracking, and a closed set. Separate parent and cost grids keep route reconstruction independent of search order; a consistent node-expansion metric supports meaningful comparisons. Unreachable destinations are handled without attempting to display an invalid route.
+
+**Demonstrates:** C++ data structures, graph-search algorithms, heuristic path planning, priority queues, path reconstruction, debugging, and algorithm validation.
+
 ## Additional engineering work
 
 These projects provide context for my robotics and embedded-systems experience. 
