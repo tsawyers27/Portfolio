@@ -24,9 +24,13 @@ int main()
         cout << "BFS Results: \n";
         vector<vector<pair<int, int>>> parents = bfs(grid);
         vector<pair<int, int>> path = build_path(parents, start, goal);
+        if (path.empty())
+        {
+            return 0;
+        }
         display_path_length(path);
         print_path(path);
-        cout << "Visual Path:\n";
+        cout << "\nVisual Path:\n";
         display_solved_grid(grid, path);
     }
     
@@ -35,9 +39,13 @@ int main()
         cout << "A* Results: \n";
         vector<vector<pair<int, int>>> parents = a_star(grid);
         vector<pair<int, int>> path = build_path(parents, start, goal);
+        if (path.empty())
+        {
+            return 0;
+        }
         display_path_length(path);
         print_path(path);
-        cout << "Visual Path:\n";
+        cout << "\nVisual Path:\n";
         display_solved_grid(grid, path);
     }
 

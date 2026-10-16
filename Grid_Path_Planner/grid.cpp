@@ -52,7 +52,7 @@ void display_solved_grid(const vector<vector<char>>& grid, const vector<pair<int
     {
         if (solved[point.first][point.second] != 'S' && solved[point.first][point.second] != 'G')
         {
-            solved[point.first][point.second] = 'x';
+            solved[point.first][point.second] = '*';
         }
     }
 

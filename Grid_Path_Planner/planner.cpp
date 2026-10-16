@@ -3,6 +3,7 @@
 #include <iostream>
 #include <algorithm>
 #include <cmath>
+#include <set>
 using namespace std;
 
 int moves[4][2] = {{0,1}, {1, 0}, {0, -1}, {-1, 0}};
@@ -75,10 +76,19 @@ vector<pair<int, int>> build_path(const vector<vector<pair<int, int>>>& parents,
     {
         path.push_back(curr);
         pair<int, int> prev = parents[curr.first][curr.second];
-        curr = prev;
+        if (prev.first == -1 && prev.second == -1)
+        {
+            path.clear();
+            return path;
+        }
+        else
+        {
+            curr = prev;
+        }
     }
     path.push_back(start);
     reverse(path.begin(), path.end());
+    
     return path;
 }
 
@@ -87,7 +97,7 @@ void print_path(const vector<pair<int, int>>& path)
     cout << "Shortest Path:\n";
     for (const auto& point : path)
     {
-        cout << "(" << point.first << "," << point.second << ")\n";
+        cout << "(" << point.first << "," << point.second << ") ";
     }
 }
 
@@ -98,8 +108,8 @@ void display_path_length(const vector<pair<int, int>>& path)
 
 vector<vector<pair<int, int>>> bfs(const vector<vector<char>>& grid)
 {
-    int rows {grid.size()};
-    int cols {grid[0].size()};
+    size_t rows {grid.size()};
+    size_t cols {grid[0].size()};
     
     pair<int, int> start = get_start(grid, 'S');
     pair<int, int> goal = get_goal(grid, 'G');
@@ -110,7 +120,7 @@ vector<vector<pair<int, int>>> bfs(const vector<vector<char>>& grid)
     queue<pair<int, int>> q;
     visited[start.first][start.second] = true;
     q.push(start);
-    int explored {1};
+    int explored {0};
 
     bool found = false;
 
@@ -124,6 +134,7 @@ vector<vector<pair<int, int>>> bfs(const vector<vector<char>>& grid)
             found = true;
             break;
         }
+        explored += 1;
 
         for (const auto& move : moves)
         {
@@ -134,7 +145,6 @@ vector<vector<pair<int, int>>> bfs(const vector<vector<char>>& grid)
                 grid[nr][nc] != '#' && !visited[nr][nc])
                 {
                     visited[nr][nc] = true;
-                    explored += 1;
                     parent[nr][nc] = curr;
                     q.push({nr, nc});
                 }
@@ -158,48 +168,69 @@ vector<vector<pair<int, int>>> bfs(const vector<vector<char>>& grid)
 
 vector<vector<pair<int, int>>> a_star(const vector<vector<char>>& grid)
 {
-    int rows {grid.size()};
-    int cols {grid[0].size()};
+    // Instantiate indices
+    size_t rows {grid.size()};
+    size_t cols {grid[0].size()};
     
+    // Get start and goal coordinates
     pair<int, int> start = get_start(grid, 'S');
     pair<int, int> goal = get_goal(grid, 'G');
 
-    vector<vector<bool>> visited(rows, vector<bool>(cols, false));
+    // Instantiate parent map and g-score tracking for path construction
     vector<vector<pair<int, int>>> parent(rows, vector<pair<int, int>>(cols, {-1, -1}));
+    vector<vector<double>> lowest_g(rows, vector<double>(cols, 1000.0));
 
+    // Instantiate open and closed sets for frontier tracking and logic
     priority_queue<Node, vector<Node>, CompareNode> open;
+    set<pair<int, int>> closed;
 
-    visited[start.first][start.second] = true;
+    // Add start to open list
     double cost = heuristic(start, goal);
     open.push({start, 0, cost});
-    int explored {1};
+    // Instantiate node exploration accumulator
+    int explored {0};
 
+    // Instantiate var to identify if goal is reached
     bool found = false;
 
     while (!open.empty()) 
     {
+        // Pick node with lowest f score from open list
         Node curr = open.top();
         open.pop();
 
+        // Check if current node is the goal
         if (curr.coords == goal)
         {
             found = true;
             break;
         }
+        
+        // Check if node already visited
+        if (closed.find(curr.coords) != closed.end())
+        {
+            continue;
+        }
+        else
+        {
+            closed.insert(curr.coords);
+            explored += 1;
+        }
 
+        // For each neighbor calculate cost to that neighbor
         for (const auto& move : moves)
         {
             int nr = curr.coords.first + move[0];
             int nc = curr.coords.second + move[1];
-            double g = heuristic({nr, nc}, start);
+            double g = curr.g + 1;
             double h = heuristic({nr, nc}, goal);
 
-            if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && 
-                grid[nr][nc] != '#' && !visited[nr][nc])
+            // If path is cheaper, update neighbor cost and add to open list
+            if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && grid[nr][nc] != '#' &&
+            closed.find({nr, nc}) == closed.end() && g < lowest_g[nr][nc])
                 {
-                    visited[nr][nc] = true;
-                    explored += 1;
                     parent[nr][nc] = curr.coords;
+                    lowest_g[nr][nc] = g;
                     open.push({{nr, nc}, g, h});
                 }
         }
