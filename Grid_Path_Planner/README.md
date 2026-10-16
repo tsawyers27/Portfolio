@@ -1,6 +1,6 @@
 # Grid Path Planner — BFS and A*
 
-A C++ command-line application that finds and visualizes shortest paths through text-based mazes using **breadth-first search (BFS)** or **A* search**. The project compares an uninformed search strategy against a heuristic-guided strategy using the same grid, movement rules, and path-reconstruction interface.
+A C++ command-line application that finds and visualizes shortest paths through text-based mazes using **breadth-first search (BFS)** or **A-Star search**. The project compares an uninformed search strategy against a heuristic-guided strategy using the same grid, movement rules, and path-reconstruction interface.
 
 This was developed as a small, independently implemented portfolio project to practice C++ data structures, graph-search algorithms, algorithm design, debugging, and evaluating search efficiency. It is deliberately a focused path-planning exercise rather than a general-purpose robotics navigation stack.
 
