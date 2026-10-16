@@ -5,5 +5,6 @@
 
 std::vector<std::vector<char>> read_grid();
 void display_grid(const std::vector<std::vector<char>>& grid);
+void display_solved_grid(const std::vector<std::vector<char>>& grid, const std::vector<std::pair<int, int>>& path);
 
 #endif

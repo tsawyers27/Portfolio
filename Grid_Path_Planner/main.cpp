@@ -21,7 +21,8 @@ int main()
     vector<pair<int, int>> path = build_path(parents, start, goal);
     display_path_length(path);
     print_path(path);
+    cout << "Visual Path:\n";
+    display_solved_grid(grid, path);
 
-    cout << "A* Search Results: \n";
     return 0;
 }

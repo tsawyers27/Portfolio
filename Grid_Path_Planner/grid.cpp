@@ -1,6 +1,7 @@
 #include "grid.h"
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 
 vector<vector<char>> read_grid()
@@ -34,7 +35,7 @@ vector<vector<char>> read_grid()
 
 void display_grid(const vector<vector<char>>& grid)
 {
-        for (const auto& row : grid)
+    for (const auto& row : grid)
     {
         for (char elem : row)
         {
@@ -42,4 +43,26 @@ void display_grid(const vector<vector<char>>& grid)
         }
         cout << endl;
     }
+}
+
+void display_solved_grid(const vector<vector<char>>& grid, const vector<pair<int, int>>& path)
+{
+    vector<vector<char>> solved = grid;
+    for (const auto& point : path)
+    {
+        if (solved[point.first][point.second] != 'S' && solved[point.first][point.second] != 'G')
+        {
+            solved[point.first][point.second] = 'x';
+        }
+    }
+
+    for (const auto& row : solved)
+    {
+        for (char elem : row)
+        {
+            cout << elem << " ";
+        }
+        cout << endl;
+    }
+
 }
