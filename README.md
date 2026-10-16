@@ -14,7 +14,7 @@ My interests include robotics software, autonomous systems, embedded development
 | **Grid-Based Robot Path Planner** | C++ | **Complete** | Graph search, BFS, A*, occupancy grids |
 | **LiDAR Obstacle Detector** | Python | Planned | 2D LiDAR processing, coordinate transforms, obstacle clustering |
 | **Differential-Drive Robot Simulator** | C++ | Planned | Robot kinematics, numerical simulation, trajectory logging |
-| **Warehouse Robot Task Scheduler** | Python | Planned | Task assignment, state machines, discrete simulation |
+| **Warehouse Robot Task Scheduler** | Python | Planned | Task assignment, state machines, discrete simulation | 
 
 ### Duplicate File Finder — Python
 
