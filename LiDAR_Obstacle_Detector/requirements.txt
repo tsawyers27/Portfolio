@@ -1,0 +1,4 @@
+rosbags
+numpy
+matplotlib
+scikit-learn

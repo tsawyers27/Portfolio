@@ -4,11 +4,11 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 from sklearn.cluster import DBSCAN
 from sklearn.metrics import pairwise_distances
-import math
 
 # Get a single, complete LiDAR scan reading from ROS2 bag
 def read_mcap():
-    dir_list = Path.rglob(Path("lidar_scans/"), "*.mcap")
+    # List directory with MCAP/ROS bag files
+    dir_list = sorted(Path("lidar_scans/").rglob("*.mcap"))
     print("Directories containing MCAP files:")
     dir_dict = {}
     for i, dir in enumerate(dir_list):
@@ -16,9 +16,12 @@ def read_mcap():
         dir_dict[j] = dir
         print(f"{j}: {dir}")
 
+    # Select file
     dir_in = input("Enter the directory number of your choice: ")
     file_path = dir_dict[int(dir_in)]
 
+    # Read a single /scan message from the selected MCAP file to generate
+    # numpy array calculation metrics
     with AnyReader([file_path]) as reader:
         connections = [x for x in reader.connections if x.topic == '/scan']
 
