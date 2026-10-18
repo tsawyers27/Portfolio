@@ -143,11 +143,11 @@ The following screenshots were captured for the same project workflow: an RViz r
 
 **Python / Matplotlib: clustered LiDAR returns**
 
-![Matplotlib obstacle-detection scatter plot](images/lidar_scan_3_pyplot.png)
+![Matplotlib obstacle-detection scatter plot](lidar_scan_3_pyplot.png)
 
 **ROS 2 / RViz: LiDAR scan reference**
 
-![RViz LaserScan reference](images/lidar_scan_3_RViz.png)
+![RViz LaserScan reference](lidar_scan_3_RViz.png)
 
 The plots have different viewpoints and rendering conventions, so they are intended as a **qualitative geometry comparison**, not a pixel-level equivalence test. Copy the two supplied screenshots into your repository's `images/` directory for these relative links to render on GitHub.
 
