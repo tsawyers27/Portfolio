@@ -12,7 +12,7 @@ My interests include robotics software, autonomous systems, embedded development
 | --- | --- | --- | --- |
 | **Duplicate File Finder** | Python, pandas, SHA-256 | **Complete** | Recursive filesystem scanning, content-based duplicate detection, reporting, permission-error handling |
 | **Grid-Based Robot Path Planner** | C++ | **Complete** | Graph search, BFS, A*, occupancy grids |
-| **LiDAR Obstacle Detector** | Python | Planned | 2D LiDAR processing, coordinate transforms, obstacle clustering |
+| **LiDAR Obstacle Detector** | Python | **Complete** | 2D LiDAR processing, coordinate transforms, obstacle clustering |
 | **Differential-Drive Robot Simulator** | C++ | Planned | Robot kinematics, numerical simulation, trajectory logging |
 | **Warehouse Robot Task Scheduler** | Python | Planned | Task assignment, state machines, discrete simulation | 
 
