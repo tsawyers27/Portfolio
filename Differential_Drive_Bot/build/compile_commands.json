@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/query/Portfolio/Differential_Drive_Bot/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/Differential_Drive_Bot.dir/main.cpp.o -c /home/query/Portfolio/Differential_Drive_Bot/main.cpp",
+  "file": "/home/query/Portfolio/Differential_Drive_Bot/main.cpp",
+  "output": "CMakeFiles/Differential_Drive_Bot.dir/main.cpp.o"
+},
+{
+  "directory": "/home/query/Portfolio/Differential_Drive_Bot/build",
+  "command": "/usr/bin/c++   -g -o CMakeFiles/Differential_Drive_Bot.dir/robot.cpp.o -c /home/query/Portfolio/Differential_Drive_Bot/robot.cpp",
+  "file": "/home/query/Portfolio/Differential_Drive_Bot/robot.cpp",
+  "output": "CMakeFiles/Differential_Drive_Bot.dir/robot.cpp.o"
+}
+]
