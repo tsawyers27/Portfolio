@@ -32,7 +32,7 @@ public:
     void set_track_width(double width);
 
     // Pose transformation
-    Pose2D transform_pose(Pose2D pose, double v, double dt);
+    Pose2D transform_pose(Pose2D pose, double dt);
 
 private:
     Pose2D pose_;

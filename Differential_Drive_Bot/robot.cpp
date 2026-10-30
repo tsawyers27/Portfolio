@@ -69,9 +69,9 @@ void Robot::set_track_width(double width) {
 }
 
 // Pose transformation
-Pose2D Robot::transform_pose(Pose2D pose, double v, double dt) {
-    double x_prime = pose.x + (v * std::cos(pose.theta) * dt);
-    double y_prime = pose.y + (v * std::sin(pose.theta) * dt);
+Pose2D Robot::transform_pose(Pose2D pose, double dt) {
+    double x_prime = pose.x + (get_v() * std::cos(pose.theta) * dt);
+    double y_prime = pose.y + (get_v() * std::sin(pose.theta) * dt);
     double theta_prime = pose.theta + (get_angular_v() * dt);
 
     Pose2D new_pose = {x_prime, y_prime, theta_prime};
