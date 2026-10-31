@@ -1,0 +1,29 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.39022151917282166 0.696972786125432 0.6016278761618415 1.4989498632833806
+  position -0.11352996261769793 -0.8374365448707977 1.7611614665913404
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 3 3
+}
+E-puck {
+  hidden position_0_0 9.264472234178346
+  hidden position_0_1 5.39484542065832
+  hidden rotation_1 0 -1 0 3.3018983801808273
+  hidden rotation_2 0 1 0 5.39484542065832
+  translation 0.12843922829550794 -0.045883527226315356 -6.396187146015184e-05
+  rotation -5.463229956227905e-05 -6.550954337839564e-05 -0.9999999963619057 1.390207512219226
+  controller "diff_drive_controller"
+}
