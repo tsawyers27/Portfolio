@@ -13,7 +13,7 @@ My interests include robotics software, autonomous systems, embedded development
 | **Duplicate File Finder** | Python, pandas, SHA-256 | **Complete** | Recursive filesystem scanning, content-based duplicate detection, reporting, permission-error handling |
 | **Grid-Based Robot Path Planner** | C++ | **Complete** | Graph search, BFS, A*, occupancy grids |
 | **LiDAR Obstacle Detector** | Python | **Complete** | 2D LiDAR processing, coordinate transforms, obstacle clustering |
-| **Differential-Drive Robot Simulator** | C++ | Planned | Robot kinematics, numerical simulation, trajectory logging |
+| **Differential-Drive Robot Simulator** | C++ | **Complete** | Robot kinematics, numerical simulation, trajectory logging |
 | **Warehouse Robot Task Scheduler** | Python | Planned | Task assignment, state machines, discrete simulation | 
 
 ### Duplicate File Finder — Python
@@ -29,6 +29,22 @@ A command-line grid pathfinding application that implements **Breadth-First Sear
 **Design considerations:** BFS uses a FIFO queue and tracks visited cells, while A* uses a min-priority queue, a Manhattan-distance heuristic, best-known path-cost tracking, and a closed set. Separate parent and cost grids keep route reconstruction independent of search order; a consistent node-expansion metric supports meaningful comparisons. Unreachable destinations are handled without attempting to display an invalid route.
 
 **Demonstrates:** C++ data structures, graph-search algorithms, heuristic path planning, priority queues, path reconstruction, debugging, and algorithm validation.
+
+### LiDAR Obstacle Detector — Python
+
+A Python application that processes real-world **2D LiDAR scan data** recorded from an RPLIDAR A2 sensor using ROS 2. The program reads MCAP recordings, extracts `LaserScan` messages, filters invalid range measurements, and converts polar coordinates into Cartesian coordinates using NumPy. It then applies **DBSCAN clustering** to identify spatially distinct obstacle groups and visualizes the resulting point clouds using Matplotlib.
+
+**Design considerations:** The processing pipeline separates data extraction, range filtering, coordinate transformation, and obstacle clustering. NumPy vectorization supports efficient scan processing, while DBSCAN identifies groups of nearby measurements without requiring a predefined number of obstacles. Cluster analysis calculates centroid positions, nearest detected points, and approximate maximum spatial extents. Noise points are distinguished from valid clusters, and the application supports selecting recordings for analysis.
+
+**Demonstrates:** Python, ROS 2 sensor data processing, MCAP/rosbags integration, NumPy vectorization, polar-to-Cartesian coordinate transformations, DBSCAN clustering, spatial analysis, and scientific visualization.
+
+### Differential-Drive Robot Simulator — C++ / Webots
+
+A C++ application that models and simulates the motion of a **differential-drive mobile robot** using forward kinematics and numerical integration. The simulator calculates linear and angular velocities from independently controlled wheel speeds, updates the robot's position and heading using forward Euler integration, and executes time-scheduled motor commands over a configurable simulation duration. Robot trajectories are recorded and visualized as two-dimensional plots using **Matplot++**.
+
+**Design considerations:** A reusable `Robot` class encapsulates the robot's physical parameters, pose, wheel velocities, and kinematic calculations, while the standalone application manages simulation timing, scheduled commands, and trajectory visualization. A separate **Cyberbotics Webots** C++ controller integrates the existing model with a simulated e-puck robot, converting linear wheel velocities into angular motor commands and using Webots' simulation clock to synchronize motion. The implementation separates ideal mathematical motion prediction from physics-based simulation without requiring modifications to the underlying kinematic model.
+
+**Demonstrates:** C++ object-oriented programming, differential-drive kinematics, coordinate transformations, forward Euler integration, discrete-time simulation, scheduled control inputs, trajectory visualization, CMake dependency management, and Webots controller integration.
 
 ## Additional engineering work
 
