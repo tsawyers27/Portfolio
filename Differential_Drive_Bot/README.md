@@ -50,22 +50,24 @@ Let:
 - `theta` = robot heading (radians)
 - `dt` = simulation timestep (s)
 
+
 The robot's forward velocity and yaw rate are:
 
-\[
+$$
 v = \frac{v_r + v_l}{2}, \qquad
 \omega = \frac{v_r - v_l}{L}
-\]
+$$
 
 The current pose is advanced using forward Euler integration:
 
-\[
+$$
 \begin{aligned}
 x_{t+dt} &= x_t + v \cos(\theta_t)\,dt \\
 y_{t+dt} &= y_t + v \sin(\theta_t)\,dt \\
 \theta_{t+dt} &= \theta_t + \omega\,dt
 \end{aligned}
-\]
+$$
+
 
 The `Robot::transform_pose()` method calculates the next pose, updates the object's stored pose, and returns the new `Pose2D` value.
 
