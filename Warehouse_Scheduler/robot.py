@@ -1,7 +1,8 @@
 class Robot:
-    def __init__(self, x, y):
+    def __init__(self, x, y, id):
         self.x = x
         self.y = y
+        self.id = id
 
         self.available = True
         self.status = "Good"
@@ -9,9 +10,14 @@ class Robot:
         self.task = None
         self.hasPackage = False
         self.package = None
+        self.lift_time = 3.0
+        self.move_time = 1.0
         self.actions = {"Left": (-1, 0), "Right": (1,0), "Up": (0,-1), "Down": (0,1)}
 
     # Getters
+    def get_id(self):
+        return self.id
+    
     def get_coords(self):
         return (self.x, self.y)
 

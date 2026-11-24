@@ -1,5 +1,6 @@
 class Task:
-    def __init__(self, package_id, priority, package_start, package_end):
+    def __init__(self, id, package_id, priority, package_start, package_end):
+        self.id = id
         self.package_id = package_id
         self.priority = priority
         self.package_start = package_start
@@ -7,6 +8,9 @@ class Task:
         self.status = "Not Complete"
 
     # Getters
+    def get_id(self):
+        return self.id
+    
     def get_package_id(self):
         return self.package_id
 
